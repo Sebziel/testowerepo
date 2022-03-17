@@ -7,6 +7,18 @@ pipeline {
       }
     }
 
+    stage('stage2') {
+      steps {
+        writeFile(file: 'test-result.txt', text: 'passed')
+      }
+    }
+
+    stage('post') {
+      steps {
+        archiveArtifacts 'test-results.txt'
+      }
+    }
+
   }
   environment {
     DEMO = 'demovalue1'
