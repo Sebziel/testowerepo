@@ -15,7 +15,7 @@ pipeline {
 
     stage('post') {
       steps {
-        archiveArtifacts 'test-results.txt'
+        archiveArtifacts 'test-result.txt'
       }
     }
 
